@@ -288,10 +288,25 @@ jQuery(function( $ ){
 
                         var resource = remoteUrl;
 
-                        if( object_id )
-                            formData.id = object_id;
+                        if( object_id ){
+
+                            if(method == "patch" || method == "put" || method == "delete") {
+
+                                resource += "id="+object_id;
+
+                            } else {
+
+                                formData.id = object_id;
+
+                            }
+
+                        }
 
                         formData.format = 'json';
+
+                        console.log('iuiuh');
+
+                        console.log(object_id);
 
                         $.ajax({
                             url: resource,
