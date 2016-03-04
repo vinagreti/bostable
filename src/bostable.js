@@ -7,6 +7,8 @@
 jQuery(function( $ ){
 
     var bostables = {}; // Tables in the DOM
+    
+    var base_url = base_url ? base_url : window.location.hostname;
 
     $.fn.extend({
 
